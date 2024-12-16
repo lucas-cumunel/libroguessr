@@ -73,3 +73,33 @@ df['Index'] = df['Index'].str.replace(r'[^\d]', '', regex=True)  # Supprimer tou
 df['Index'] = pd.to_numeric(df['Index'], errors='coerce')  # Convertir en entier, NaN si invalide
 '''
 
+print(df.head(20))
+
+
+# Charger la base CSV avec les livres pour ajouter l'index 
+books2 = "/home/onyxia/work/libroguessr/books2.csv"
+base_csv = pd.read_csv(books2)
+
+indices = []
+
+for title in base_csv['Title']:
+    # On recherche le titre dans la colonne Description du DataFrame
+    match = df[df['Description'].str.startswith(title, na=False)]
+    
+    if not match.empty:
+        # Ajouter l'index correspondant s'il a été trouvé
+        indices.append(match.iloc[0]['Index'])
+    else:
+        # Ajouter une valeur par défaut (par exemple NaN) si pas de correspondance
+        indices.append(None)
+
+# Ajouter la colonne d'indices dans la base CSV
+base_csv['index'] = indices
+
+# Sauvegarder le résultat dans un nouveau fichier CSV
+base_csv.to_csv("base_csv_avec_index.csv", index=False)
+
+# Vérifier combien de valeurs dans la colonne 'index' sont des nombres (non nulles)
+nombre_index_trouves = base_csv['index'].notna().sum()
+
+print(f"Nombre d'index trouvés : {nombre_index_trouves}")
