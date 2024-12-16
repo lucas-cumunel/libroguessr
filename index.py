@@ -3,6 +3,7 @@ import bs4
 import re
 import pandas as pd
 
+
 #Requirements : pip install bs4 lxml
 #On veut récupérer l'index qui lie chaque livre à un nombre 
 
@@ -73,7 +74,6 @@ df['Index'] = df['Index'].str.replace(r'[^\d]', '', regex=True)  # Supprimer tou
 df['Index'] = pd.to_numeric(df['Index'], errors='coerce')  # Convertir en entier, NaN si invalide
 '''
 
-print(df.head(20))
 
 
 # Charger la base CSV avec les livres pour ajouter l'index 
@@ -95,11 +95,66 @@ for title in base_csv['Title']:
 
 # Ajouter la colonne d'indices dans la base CSV
 base_csv['index'] = indices
+base_csv_clean = base_csv.dropna()
+
 
 # Sauvegarder le résultat dans un nouveau fichier CSV
-base_csv.to_csv("base_csv_avec_index.csv", index=False)
+base_csv_clean.to_csv("base_csv_avec_index.csv", index=False)
 
 # Vérifier combien de valeurs dans la colonne 'index' sont des nombres (non nulles)
 nombre_index_trouves = base_csv['index'].notna().sum()
 
 print(f"Nombre d'index trouvés : {nombre_index_trouves}")
+
+base = "/home/onyxia/work/base_csv_avec_index.csv"
+base_csv_index = pd.read_csv(base)
+
+# Ajouter une colonne vide pour le texte dans le DataFrame
+base_csv_index['Texte'] = ""
+
+# On veut maintenant récupérer les textes des livres de la base
+for livre, index in base_csv_index[['Title', 'index']].itertuples(index=False):
+    # Construire l'URL avec l'index
+    url = f"https://www.gutenberg.org/cache/epub/{index}/pg{index}-images.html"
+    
+    # Télécharger la page HTML
+    response = requests.get(url)
+
+    # Vérifier que la page a été téléchargée avec succès
+    if response.status_code == 200:
+        # Parser le HTML avec BeautifulSoup
+        soup = bs4.BeautifulSoup(response.text, 'html.parser')
+        
+        # Extraire tout le texte de la page
+        page_text = soup.get_text()  # Cela extrait tout le texte de la page
+        base_csv_index.loc[base_csv_index['Title'] == livre, 'Texte'] = page_text
+
+        """
+        # Convertir le titre en majuscules pour les marqueurs
+        title_upper = livre.upper()
+        start_marker = f"*** START OF THE PROJECT GUTENBERG EBOOK {title_upper} ***"
+        end_marker = f"*** END OF THE PROJECT GUTENBERG EBOOK {title_upper} ***"
+        
+        # Trouver les positions de début et de fin des marqueurs dans le texte de la page
+        start_index = page_text.find(start_marker)
+        end_index = page_text.find(end_marker)
+    
+        # Vérifier si les marqueurs sont trouvés
+        if start_index != -1 and end_index != -1:
+            # Extraire le texte entre les deux marqueurs
+            texte_extrait = page_text[start_index + len(start_marker):end_index].strip()
+            
+            # Ajouter uniquement le texte extrait dans la colonne 'Texte'
+            base_csv_index.loc[base_csv_index['Title'] == livre, 'Texte'] = texte_extrait
+        else:
+           
+            print(f"Marqueurs non trouvés pour {livre} (Index {index}).")
+            """
+    else:
+        print(f"Erreur lors du téléchargement de la page pour {livre} (Index {index}).")
+# Afficher le résultat
+print(base_csv_index.head(20))
+
+
+
+
