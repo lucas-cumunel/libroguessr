@@ -153,7 +153,8 @@ for livre, index in base_csv_index[['Title', 'index']].itertuples(index=False):
     else:
         print(f"Erreur lors du téléchargement de la page pour {livre} (Index {index}).")
 # Afficher le résultat
-print(base_csv_index.head(20))
+print(base_csv_index.head(35))
+base_csv_index.to_csv("base_csv_final.csv", index=False)
 
 
 
