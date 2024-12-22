@@ -77,7 +77,7 @@ df['Index'] = pd.to_numeric(df['Index'], errors='coerce')  # Convertir en entier
 
 
 # Charger la base CSV avec les livres pour ajouter l'index 
-books2 = "/home/onyxia/work/libroguessr/books2.csv"
+books2 = "Data\\books.csv"
 base_csv = pd.read_csv(books2)
 
 indices = []
@@ -95,6 +95,7 @@ for title in base_csv['Title']:
 
 # Ajouter la colonne d'indices dans la base CSV
 base_csv['index'] = indices
+
 base_csv_clean = base_csv.dropna()
 
 
@@ -106,7 +107,7 @@ nombre_index_trouves = base_csv['index'].notna().sum()
 
 print(f"Nombre d'index trouvés : {nombre_index_trouves}")
 
-base = "/home/onyxia/work/base_csv_avec_index.csv"
+base = "base_csv_avec_index.csv"
 base_csv_index = pd.read_csv(base)
 
 # Ajouter une colonne vide pour le texte dans le DataFrame
@@ -129,11 +130,11 @@ for livre, index in base_csv_index[['Title', 'index']].itertuples(index=False):
         page_text = soup.get_text()  # Cela extrait tout le texte de la page
         base_csv_index.loc[base_csv_index['Title'] == livre, 'Texte'] = page_text
 
-        """
-        # Convertir le titre en majuscules pour les marqueurs
-        title_upper = livre.upper()
-        start_marker = f"*** START OF THE PROJECT GUTENBERG EBOOK {title_upper} ***"
-        end_marker = f"*** END OF THE PROJECT GUTENBERG EBOOK {title_upper} ***"
+        
+        # Je souhaite enlever le texte ajouté par projet Gutenberg et qui ne fait pas partie de l'oeuvre originale.
+        # Je me sers pour cela des balises présentes dans le texte
+        start_marker = f"*** START OF THE PROJECT GUTENBERG EBOOK "
+        end_marker = f"*** END OF THE PROJECT GUTENBERG EBOOK"
         
         # Trouver les positions de début et de fin des marqueurs dans le texte de la page
         start_index = page_text.find(start_marker)
@@ -149,12 +150,13 @@ for livre, index in base_csv_index[['Title', 'index']].itertuples(index=False):
         else:
            
             print(f"Marqueurs non trouvés pour {livre} (Index {index}).")
-            """
+            
     else:
         print(f"Erreur lors du téléchargement de la page pour {livre} (Index {index}).")
 # Afficher le résultat
 print(base_csv_index.head(35))
-base_csv_index.to_csv(path_or_buf="libroguessr/Data/base_csv_final.csv", index=False)
+
+base_csv_index.to_csv(path_or_buf="Data/base_csv_final.csv", index=False)
 
 
 
