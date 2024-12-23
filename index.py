@@ -2,9 +2,10 @@ import requests
 import bs4
 import re
 import pandas as pd
+from rapidfuzz import fuzz
 
 
-#Requirements : pip install bs4 lxml
+#Requirements : pip install bs4 lxml rapidfuzz
 #On veut récupérer l'index qui lie chaque livre à un nombre 
 
 url_liste_textes = "https://www.gutenberg.org/dirs/GUTINDEX.ALL.iso-8859-1.txt"
@@ -82,10 +83,37 @@ base_csv = pd.read_csv(books2)
 
 indices = []
 
-for title in base_csv['Title']:
-    # On recherche le titre dans la colonne Description du DataFrame
-    match = df[df['Description'].str.startswith(title, na=False)]
-    
+# Parcourir les titres et auteurs en parallèle
+for title, author in zip(base_csv['Title'], base_csv['Author']):
+    # Nettoyage des données : normalisation des titres et descriptions
+    df['Description_clean'] = df['Description'].str.strip().str.lower()  # Supprimer espaces et mettre en minuscule
+    title_clean = title.strip().lower()
+    author_clean = author.strip().lower()
+
+    # Méthode 1 : Correspondance stricte avec expression régulière
+    df['Exact_Match'] = df['Description_clean'].str.match(rf"^{re.escape(title_clean)}(\s|[.,;!?]|$)", na=False)
+
+    # Méthode 2 : Comparaison des premiers mots
+    title_words = title_clean.split()
+    num_words = len(title_words)
+    df['Description_start'] = df['Description_clean'].str.split().str[:num_words].str.join(' ')
+    df['Starts_With_Title'] = df['Description_start'] == title_clean
+
+    # Méthode 3 : Correspondance approximative avec RapidFuzz
+    df['Similarity'] = df['Description_clean'].apply(lambda x: fuzz.ratio(title_clean, x[:len(title_clean)]))
+    similarity_threshold = 90
+    df['Approx_Match'] = df['Similarity'] > similarity_threshold
+
+    # Nouvelle méthode : Vérification de la présence de l'auteur
+    df['Author_Present'] = df['Description_clean'].str.contains(author_clean, na=False)
+
+    # Résultat final : fusion des critères
+    # Une ligne est un match si l'un des critères du titre est rempli et si l'auteur est présent
+    df['Final_Match'] = (df['Exact_Match'] | df['Starts_With_Title'] | df['Approx_Match']) & df['Author_Present']
+
+    # Afficher uniquement les lignes correspondant au titre et auteur actuels
+    match = df[df['Final_Match']]
+
     if not match.empty:
         # Ajouter l'index correspondant s'il a été trouvé
         indices.append(match.iloc[0]['Index'])
@@ -154,7 +182,7 @@ for livre, index in base_csv_index[['Title', 'index']].itertuples(index=False):
     else:
         print(f"Erreur lors du téléchargement de la page pour {livre} (Index {index}).")
 # Afficher le résultat
-print(base_csv_index.head(35))
+print(base_csv_index.head(50))
 
 base_csv_index.to_csv(path_or_buf="Data/base_csv_final.csv", index=False)
 
