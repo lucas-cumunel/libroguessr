@@ -6,6 +6,20 @@ from rapidfuzz import fuzz
 
 
 #Requirements : pip install bs4 lxml rapidfuzz
+
+#On récupère une liste d'oeuvres qu'on sait présentes sur le site pour ensuite demander leur thème 
+# à l'API de chatgpt 
+url_liste_oeuvres = "https://www.gutenberg.org/browse/scores/top-fr.php#books-last1"
+request_liste_oeuvres = requests.get(url_liste_oeuvres).content
+
+page_oeuvres = bs4.BeautifulSoup(request_liste_oeuvres, "lxml")
+
+body_oeuvres = page.find("ol")
+
+
+
+
+
 #On veut récupérer l'index qui lie chaque livre à un nombre 
 
 url_liste_textes = "https://www.gutenberg.org/dirs/GUTINDEX.ALL.iso-8859-1.txt"
