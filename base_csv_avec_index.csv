@@ -1,33 +1,93 @@
-Author,Title,Year,Themes,index
-Jean de La Fontaine,Fables,1678,"Contes, Mythes et légendes, Poésie, Décadence, Arts et Culture",56327
-Montesquieu,Lettres persanes,1721,"Décadence, Voyages",33856
-Voltaire,Candide,1746,"Justice, Satire, Vie sociale et mœurs, Fiction historique, Pouvoir, Lettres imaginaires, Arts et Culture, Coutumes, Éducation et Conduite de la vie, Critique, Décadence, Passion, Romans, Société et politique",59859
-Jean-Jacques Rousseau,Les rêveries du promeneur solitaire,1782,Critique,65434
-Denis Diderot,La religieuse,1758,"Décadence, Religion",28827
-Choderlos de Laclos,Les Liaisons dangereuses,1782,"Décadence, Passion, Coutumes",69913
-Abbé Prévost,Manon Lescaut,1787,"Décadence, Arts et Culture, Fiction historique, Voyages",59098
-Victor Hugo,Notre-Dame de Paris,1831,"Décadence, Contes, Romans, Fiction historique",19657
-Victor Hugo,Quatrevingt-treize,1800,"Décadence, Fiction historique",9645
-Victor Hugo,Hernani,1830,"Décadence, Drame",9976
-Victor Hugo,Ruy Blas,1838,Décadence,60354
-Alexandre Dumas,Le Comte de Monte Cristo,1830,Décadence,17992
-Alexandre Dumas,Les Trois Mousquetaires,1844,"Contes, Fiction historique, Décadence, Romans, Société et politique, Voyages",58211
-Alexandre Dumas,Vingt ans apres̀,1800,"Décadence, Fiction historique, Voyages",13952
-Gustave Flaubert,Madame Bovary,1857,"Décadence, Romans, Coutumes",27575
-Gustave Flaubert,Trois contes,1877,"Décadence, Coutumes",12065
-Gustave Flaubert,Bouvard et Pécuchet,1896,"Critique, Décadence",14157
-Émile Zola,Au bonheur des dames,1883,Décadence,16852
-Stendhal,Le rouge et le noir,1800,"Critique, Décadence, Romans, Coutumes",798
-Stendhal,De l'amour,1800,Décadence,60882
-George Sand,Indiana,1832,"Décadence, Passion, Contes",63445
-George Sand,Histoire de ma vie,1854,"Décadence, Biographie",42765
-Jules Verne,Voyage au Centre de la Terre,1867,"Fantastique, Contes, Épouvante, Décadence, Voyages",4791
-Jules Verne,Le Tour du Monde en Quatre-Vingts Jours,1872,"Contes, Fantastique, Techniques, Fiction historique, Épouvante, Romans, Critique, Décadence, Arts et Culture, Voyages",46541
-Jules Verne,Vingt mille lieues sous les mers,1870,"Contes, Épouvante, Décadence, Romans, Voyages",54873
-Jules Verne,De la terre à la lune,1865,"Décadence, Voyages",799
-Alphonse Daudet,Tartarin de Tarascon,1800,Décadence,10687
-Théophile Gautier,Mademoiselle de Maupin,1834,Décadence,48894
-Charles Baudelaire,Les fleurs du mal,1855,"Critique, Arts et Culture, Poésie, Biographie",6099
-Edmond de Goncourt,Journal,1887,Mœurs,18055
-Edmond de Goncourt,La femme au dix-huitieme siecle,1862,"Mœurs, Fiction historique, Philosophie, Coutumes, Décadence, Société et politique",46142
-Octave Mirbeau,Le calvaire,1887,"Décadence, Esthétique",44139
+Author,Title,Year,Themes,Author_Cleaned,index
+Alexandre Dumas                                              ,Pauline,1830,Décadence,Alexandre Dumas,71510
+Alexandre Dumas                 ,Les trois mousquetaires,1830,Décadence,Alexandre Dumas,58211
+Alexandre Dumas                                      ,Gabriel Lambert,1830,Décadence,Alexandre Dumas,46747
+Alexandre Dumas                                    ,Le comte de Moret,1830,Décadence,Alexandre Dumas,37771
+Alexandre Dumas                                      ,La tulipe noire,1830,Décadence,Alexandre Dumas,26504
+Alexandre Dumas                               ,Creation et redemption,1830,Décadence,Alexandre Dumas,26476
+Alexandre Dumas                                ,Le capitaine Pamphile,1830,Décadence,Alexandre Dumas,18697
+Alexandre Dumas                                                 ,Acte,1830,Décadence,Alexandre Dumas,18321
+"Alexandre Dumas, Pere                      ",La reine Margot,1894,"Décadence, Fiction historique, Roman","Alexandre Dumas, Pere",13857
+"Alexandre Dumas, Pere                           ",Henri III et sa Cour,1894,"Décadence, Fiction historique, Roman","Alexandre Dumas, Pere",2682
+"Alexandre Dumas, Pere                                ",La Tulipe Noire,1894,"Décadence, Fiction historique, Roman","Alexandre Dumas, Pere",1910
+Alphonse Daudet                                      ,Contes de lundi,1869,Décadence,Alphonse Daudet,50154
+Alphonse Daudet                                        ,Port-Tarascon,1869,Décadence,Alphonse Daudet,15645
+Alphonse Daudet                                                ,Sapho,1869,Décadence,Alphonse Daudet,13825
+Alphonse Daudet                                       ,Le petit chose,1869,Décadence,Alphonse Daudet,27737
+Alphonse Daudet                                    ,Le nabab,1869,Décadence,Alphonse Daudet,12727
+Alphonse Daudet                                 ,Tartarin de Tarascon,1869,Décadence,Alphonse Daudet,10687
+Alphonse Daudet                                ,Tartarin sur les Alpes,1869,Décadence,Alphonse Daudet,5105
+Edmond de Goncourt                   ,La femme au dix-huitième siècle,1862,"Mœurs, Fiction historique, Décadence, Coutumes, Société et politique, Philosophie",Edmond de Goncourt,46142
+Edmond de Goncourt                                    ,La fille Elisa,1862,"Mœurs, Fiction historique, Décadence, Coutumes, Société et politique, Philosophie",Edmond de Goncourt,30317
+Edmond de Goncourt                                          ,Hokousai,1862,"Mœurs, Fiction historique, Décadence, Coutumes, Société et politique, Philosophie",Edmond de Goncourt,18724
+Eugène Sue,"Atar-Gull, Un Corsaire, Le Parisien en Mer, Voyages et                   
+ Aventures sur Mer de Narcisse Gelin",1844,"Religion, Décadence, Arts et Culture",Eugène Sue,30582
+Eugène Sue                           ,Les mystères du peuple,1844,"Religion, Décadence, Arts et Culture",Eugène Sue,29094
+George Sand                                         ,Les dames vertes,1846,Roman,George Sand,69098
+George Sand                                                  ,Mauprat,1846,Roman,George Sand,62787
+George Sand                                         ,Le beau Laurence,1846,Roman,George Sand,61411
+George Sand                                                  ,Adriani,1846,Roman,George Sand,60812
+George Sand                                       ,Evenor et Leucippe,1846,Roman,George Sand,58299
+George Sand                                                  ,Tamaris,1846,Roman,George Sand,45753
+George Sand                                        ,La petite fadette,1846,Roman,George Sand,34204
+George Sand                                             ,Le Piccinino,1846,Roman,George Sand,30831
+Gustave Flaubert                                     ,Un coeur simple,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,26812
+Gustave Flaubert                                 ,Bouvard et Pecuchet,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,14157
+Gustave Flaubert                       ,Dictionnaire des idees recues,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,14156
+Gustave Flaubert                                       ,Madame Bovary,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,27575
+Gustave Flaubert                                        ,Trois contes,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,12065
+Gustave Flaubert                       ,La tentation de Saint Antoine,1857,"Décadence, Roman, Philosophie, Coutumes, Société et politique",Gustave Flaubert,10982
+Guy de Maupassant                                   ,La Femme de Paul,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,30587
+Guy de Maupassant                                    ,La petite roque,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,18353
+Guy de Maupassant                                            ,Une vie,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,17457
+Guy de Maupassant                                     ,La vie errante,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,14793
+Guy de Maupassant                       ,Contes du jour et de la nuit,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,14790
+Guy de Maupassant                                    ,Monsieur Parent,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,12011
+Guy de Maupassant                               ,Contes de la Becasse,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,11714
+Guy de Maupassant                                          ,Mlle Fifi,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,11597
+Guy de Maupassant                                  ,La Maison Tellier,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,11596
+Guy de Maupassant                                     ,La Main Gauche,1893,"Décadence, Pouvoir, Société et politique, Ambitions, Fiction historique, Roman, Coutumes, Passion",Guy de Maupassant,11495
+Jean de La Fontaine      ,Audio,1678,"Mythes et légendes, Arts et Culture, Poésie, Aventures, Décadence, Conte",Jean de La Fontaine,28732
+Jean de La Fontaine               ,Fables de La Fontaine,1678,"Mythes et légendes, Arts et Culture, Poésie, Aventures, Décadence, Conte",Jean de La Fontaine,17942
+Jules Verne                                ,Les naufragés du Jonathan,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,60450
+Jules Verne                   ,Les grands navigateurs du XIIIe siècle,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,55869
+Jules Verne                         ,Vingt mille lieues sous les mers,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,54873
+Jules Verne                             ,Les voyageurs du XIXe siècle,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,53439
+Jules Verne                  ,Le Tour du monde en quatre-vingts jours,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,46541
+Jules Verne                                        ,Autour de la lune,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,46111
+Jules Verne                                        ,Mistress Branican,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,17914
+Jules Verne                                      ,Une ville flottante,1872,"Décadence, Fiction historique, Aventures, Techniques, Conte, Critique, Voyages, Épouvante, Fantastique, Arts et Culture, Roman",Jules Verne,17832
+Stendhal                                       ,La Duchesse de Palliano,1800,"Décadence, Critique, Roman, Coutumes",Stendhal,803
+Stendhal                   ,"Vittoria Accoramboni, Duchesse de Bracciano",1800,"Décadence, Critique, Roman, Coutumes",Stendhal,802
+Stendhal                                                     ,Les Cenci,1800,"Décadence, Critique, Roman, Coutumes",Stendhal,801
+Stendhal                                           ,Le Rouge et le Noir,1800,"Décadence, Critique, Roman, Coutumes",Stendhal,798
+Stendhal                                        ,La Chartreuse de Parme,1800,"Décadence, Critique, Roman, Coutumes",Stendhal,796
+Théophile Gautier                                     ,Constantinople,1834,Décadence,Théophile Gautier,71059
+Théophile Gautier,"Les Jeunes-France, romans goguenards, suivis de Contes humoristiques,",1834,Décadence,Théophile Gautier,63244
+Théophile Gautier                              ,Le capitaine Fracasse,1834,Décadence,Théophile Gautier,60746
+Théophile Gautier                                   ,Honoré de Balzac,1834,Décadence,Théophile Gautier,53399
+Théophile Gautier                                        ,Victor Hugo,1834,Décadence,Théophile Gautier,51977
+Théophile Gautier                                   ,Romans et contes,1834,Décadence,Théophile Gautier,51632
+Théophile Gautier                                    ,Émaux et camées,1834,Décadence,Théophile Gautier,44160
+Victor Hugo                                  ,Post-scriptum de ma vie,1800,"Décadence, Roman, Coutumes",Victor Hugo,63768
+Victor Hugo                                                 ,Ruy Blas,1800,"Décadence, Roman, Coutumes",Victor Hugo,60354
+Victor Hugo                                         ,Le Rhin,1800,"Décadence, Roman, Coutumes",Victor Hugo,42151
+Victor Hugo                                        ,Napoleon Le Petit,1800,"Décadence, Roman, Coutumes",Victor Hugo,22048
+Victor Hugo                                      ,Notre-Dame de Paris,1800,"Décadence, Roman, Coutumes",Victor Hugo,19657
+Voltaire                                                     ,Candide,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,59859
+Voltaire                       ,"Le Monde comme il va, vision de Babouc",1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,5138
+Voltaire                                             ,Jeannot et Colin,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,4772
+Voltaire                                          ,Le Blanc et le Noir,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,4771
+Voltaire                          ,Histoire des Voyages de Scarmentado,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,4718
+Voltaire                                         ,Micromegas,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,4649
+Voltaire                                             ,Memnon,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,4648
+Voltaire                                              ,Zadig,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,18972
+Voltaire                                               ,Vie de Molière,1746,"Critique, Décadence, Société et politique, Vie sociale et mœurs, Pouvoir, Justice, Lettres imaginaires, Éducation et Conduite de la vie, Fiction historique, Comédie, Roman, Satire, Arts et Culture, Coutumes",Voltaire,3644
+Émile Zola                 ,Ed,1885,"Décadence, Société et politique",Émile Zola,57461
+Émile Zola                                       ,La vérité en marche,1885,"Décadence, Société et politique",Émile Zola,56808
+Émile Zola                              ,Son Excellence Eugène Rougon,1885,"Décadence, Société et politique",Émile Zola,17557
+Émile Zola                                                  ,La curée,1885,"Décadence, Société et politique",Émile Zola,17553
+Émile Zola                                                   ,Le rêve,1885,"Décadence, Société et politique",Émile Zola,17533
+Émile Zola                                      ,Au bonheur des dames,1885,"Décadence, Société et politique",Émile Zola,16852
+Émile Zola                                             ,Contes à Ninon,1885,"Décadence, Société et politique",Émile Zola,7462
+Émile Zola                                         ,Le Ventre de Paris,1885,"Décadence, Société et politique",Émile Zola,6470
