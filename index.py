@@ -85,7 +85,7 @@ df['Index'] = pd.to_numeric(df['Index'], errors='coerce')  # Convertir en entier
 
 
 # Charger la base CSV avec les livres pour ajouter l'index 
-books2 = "Data\\books.csv"
+books2 = "final_list"
 base_csv = pd.read_csv(books2)
 
 indices = []
