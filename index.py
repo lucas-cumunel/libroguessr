@@ -121,6 +121,8 @@ for livre, index in base_csv_index[['Title', 'Index']].itertuples(index=False):
         print(f"Erreur lors du téléchargement de la page pour {livre} (Index {index}).")
 
 base_csv_index = base_csv_index[base_csv_index["Description"].str.contains(r"\[Language: French\]", na=False)]
+base_csv_index = base_csv_index.dropna(subset=['Texte'])
+base_csv_index = base_csv_index[~base_csv_index['Description'].str.contains('Audio', na=False)]
 
 # Sauvegarder la base finale
 base_csv_index.to_csv("Data/base_csv_final.csv", index=False)
