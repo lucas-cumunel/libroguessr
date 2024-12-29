@@ -93,7 +93,7 @@ auteurs = [
 
 ]
 
-#On créé une expression réulière que signifie "ou" pour l'utiiser ensuite
+#On créé une expression réulière que signifie "ou" pour l'utiliser ensuite
 auteurs_join = "|".join(map(re.escape, auteurs))
 # Filtrer les lignes qui contiennent au moins un des auteurs
 df_livres_fr_filtré = df_livres_fr[df_livres_fr["Description"].str.contains(auteurs_join, na=False)]
