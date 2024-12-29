@@ -1,6 +1,13 @@
-pip install pandas bs4 lxml rapidfuzz
+pip install pandas bs4 lxml rapidfuzz fuzzywuzzy python-Levenshtein langdetect requests numpy seaborn scikit-learn
 
 Version requests : 2.32.3
 Version bs4 : 0.0.2
 Version pandas : 2.2.3
 Version rapidfuzz : 3.11.0
+Version fuzzywuzzy : 0.18.0
+Version python-Levenshtein : 0.26.1
+Version langdetect : 1.0.9
+Version requests : 2.32.3
+Version numpy : 2.2.1
+Version seaborn : 0.13.2
+Version scikit-learn : 1.6.0
