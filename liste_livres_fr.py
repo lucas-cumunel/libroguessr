@@ -3,9 +3,9 @@ import bs4
 import re
 import pandas as pd
 from rapidfuzz import fuzz
+import s3fs
 
-
-#Requirements : pip install bs4 lxml rapidfuzz
+#Requirements : pip install bs4 lxml rapidfuzz s3fs
 #On veut récupérer l'index qui lie chaque livre à un nombre 
 
 url_liste_textes = "https://www.gutenberg.org/dirs/GUTINDEX.ALL.iso-8859-1.txt"
@@ -29,14 +29,12 @@ end_index = index_texte.find(end_marker)
 # Extraire le texte entre les deux marqueurs
 texte_extrait = index_texte[start_index + len(start_marker):end_index].strip()    
 
-
 texte_extrait_lignes = texte_extrait.splitlines()
 
 #La ligne 1a sera la première de la table de correspondance 
 print(texte_extrait_lignes[10])
 #La dernière est bien
 print(texte_extrait_lignes[len(texte_extrait_lignes)-1])
-
 
 # On garde uniquement les lignes qui constituent la table de correspondance
 texte_extrait_lignes_trié = texte_extrait_lignes[10:len(texte_extrait_lignes)-1]
@@ -68,10 +66,11 @@ for oeuvre in oeuvres:
 
 # Étape 3 : Convertir en DataFrame pour structuration
 df_livres = pd.DataFrame(data)
+
 # Filtrer les lignes contenant "[Language: French]"
 df_livres_fr = df_livres[df_livres["Description"].str.contains(r"\[Language: French\]", na=False)]
 
-# List of French Writers abritrarily defined and chosen in the 17th, 18th and 19th century
+# List of French Writers arbitrarily defined and chosen in the 17th, 18th and 19th century
 auteurs = [
     # 17th century
     "Honoré d'Urfé", "Madeleine de Scudéry", "Paul Scarron", "Jean de La Fontaine",
@@ -90,11 +89,27 @@ auteurs = [
     "Prosper Mérimée", "Eugène Sue", "Charles Nodier",
     "Gaston Leroux", "François-René de Chateaubriand", "Anatole France", "Gustave Flaubert", "Alfred Jarry",
     "Guy de Maupassant", "Romain Rolland", "Alfred Séguin", "Alfred de Vigny", "Paul de Kock"
-
 ]
 
-#On créé une expression réulière que signifie "ou" pour l'utiliser ensuite
+# On créé une expression réulière que signifie "ou" pour l'utiliser ensuite
 auteurs_join = "|".join(map(re.escape, auteurs))
+
 # Filtrer les lignes qui contiennent au moins un des auteurs
 df_livres_fr_filtré = df_livres_fr[df_livres_fr["Description"].str.contains(auteurs_join, na=False)]
-df_livres_fr_filtré.to_csv("livres_fr_triés.csv", index=False, encoding="utf-8")
+
+# Stocker directement le fichier CSV dans S3
+# Connexion au service S3
+fs = s3fs.S3FileSystem(
+    key="VOTRE_ACCESS_KEY",
+    secret="VOTRE_SECRET_KEY",
+    client_kwargs={"endpoint_url": "https://minio.lab.sspcloud.fr"}
+)
+
+# Spécifier le chemin du fichier S3
+s3_path = "arnbudrrt/Data_libroguessr/livres_fr_triés.csv"
+
+# Sauvegarder directement dans le bucket S3
+with fs.open(s3_path, "w") as file_out:
+    df_livres_fr_filtré.to_csv(file_out, index=False, encoding="utf-8")
+
+print(f"Fichier CSV sauvegardé dans S3 à : {s3_path}")
