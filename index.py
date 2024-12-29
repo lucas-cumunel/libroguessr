@@ -50,7 +50,7 @@ for oeuvre in oeuvres:
 df = pd.DataFrame(data)
 
 # Charger la base CSV avec les livres pour ajouter l'index
-books2 = "final_list"  # Nom du fichier d'entrée
+books2 = r"Data\final_list.csv"  # Nom du fichier d'entrée
 base_csv = pd.read_csv(books2)
 
 # Conserver la colonne 'Description' dans la base initiale
