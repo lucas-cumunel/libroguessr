@@ -50,7 +50,7 @@ for oeuvre in oeuvres:
 df = pd.DataFrame(data)
 
 # Charger la base CSV avec les livres pour ajouter l'index
-books2 = r"Data\final_list.csv"  # Nom du fichier d'entrée
+books2 = r"Data/final_list.csv"  # Nom du fichier d'entrée
 base_csv = pd.read_csv(books2)
 
 # Conserver la colonne 'Description' dans la base initiale
@@ -89,13 +89,9 @@ for title, author in zip(base_csv['Title'], base_csv['Author']):
 base_csv['Index'] = indices
 
 # Supprimer les lignes sans index trouvé
-base_csv_clean = base_csv.dropna(subset=['Index'])
+base_csv_index = base_csv.dropna(subset=['Index'])
 
-# Sauvegarder la base mise à jour
-base_csv_clean.to_csv("base_csv_avec_index.csv", index=False)
-
-# Charger la base nettoyée pour ajouter les textes
-base_csv_index = pd.read_csv("base_csv_avec_index.csv")
+#On ajoute une colonne pour contenir les textes
 base_csv_index['Texte'] = ""
 
 # Télécharger les textes des livres
