@@ -1,0 +1,6 @@
+pip install pandas bs4 lxml rapidfuzz
+
+Version requests : 2.32.3
+Version bs4 : 0.0.2
+Version pandas : 2.2.3
+Version rapidfuzz : 3.11.0
