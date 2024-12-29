@@ -32,10 +32,16 @@ A partir de cette base de données de 87 livres, nous avons **scrappé** la page
 Le notebook [Notebook.ipynb](Notebook.ipynb) fournit les instructions détaillées pour utiliser le programme.
 
 
-# Tokenisation des données
+# Tokenisation et lemmatisation des données
 
+Pour pouvoir traiter des données textuelles brutes comme "Bonjour, comment ça va ?" il faut d'abord les tokéniser et les lemmatiser.  
+La **tokénisation** signifie convertir un texte en une liste de mots, reconnaissable par le langage de programmation comme des entités propres, des tokens. Ici par exemple, ce serait quelque chose comme ["Bonjour", ",", "comment", "ça", "va", "?"]. Tokéniser signifie aussi retirer les mots qui n'apportent que peu de sens à un texte (les conjonctions de coordination par exemple).  
+La **lemmatisation** est de son côté une simplification des tokens. Il s'agit très simplement d'un passage à la racine du mot. Dans notre exemple, "va" serait sans doute convertit en "aller", sa forme infinitive. Cela évite de considérer "va", "vas", "ira", "vais"... comme porteurs de sens différents alors qu'ils renvoient tous fondamentalement au même verbe.
 
-# Stat desc ???
+Comment tokéniser et lemmatiser alors ?  
+Pour ce faire, nous utilisons la bibliothèque **spaCy**, la plus au point en termes de tokénisation et lemmatisation pour la langue française. Cette bibliothèque permet, à partir du modèle de traitement du langage naturel français ("fr_core_news_sm"), d'isoler les tokens de chaque mot et d'en extraire le lemmes.
+Pour plus de précision, nous avons même eu recours a un **lemmatiseur Lefff**, celui développé par [Claude Coulombe](https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer). Lefff signifie "Lexique des formes fléchies du français". Il s'agit d'un lexique morhphologique et syntaxique qui associe à la fois des propriétés morphologiques à un mot (comme sa nature) et syntaxiques (sa place dans la phrase). Il est ainsi plus précis.
+
 
 
 # Clustering des livres : Application de la méthode VBGMM
