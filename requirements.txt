@@ -1,17 +1,17 @@
-pip install pandas bs4 lxml rapidfuzz fuzzywuzzy python-Levenshtein langdetect requests numpy seaborn scikit-learn spacy spacy-lefff git+https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer.git wordcloud matplotlib s3fs
-
-Version requests : 2.32.3
-Version bs4 : 0.0.2
-Version pandas : 2.2.3
-Version rapidfuzz : 3.11.0
-Version fuzzywuzzy : 0.18.0
-Version python-Levenshtein : 0.26.1
-Version langdetect : 1.0.9
-Version requests : 2.32.3
-Version numpy : 2.2.1
-Version seaborn : 0.13.2
-Version scikit-learn : 1.6.0
-Version spacy : 3.8.3
-Version spacy-lefff : 0.5.1
-Version matplotlib : 3.10.0
-Version wordcloud : 1.9.4
+pandas==2.2.3
+bs4==0.0.2
+lxml
+rapidfuzz==3.11.0
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.26.1
+langdetect==1.0.9
+requests== 2.32.3
+numpy==2.2.1
+seaborn==0.13.2
+scikit-learn==1.6.0
+spacy==3.8.3
+spacy-lefff==0.5.1
+git+https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer.git
+wordcloud==1.9.4
+matplotlib==3.10.0
+s3fs
