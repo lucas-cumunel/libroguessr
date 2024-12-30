@@ -3,6 +3,8 @@ import bs4
 import re
 import pandas as pd
 from rapidfuzz import fuzz
+import s3fs
+
 
 # Requirements : pip install bs4 lxml rapidfuzz
 
@@ -125,6 +127,15 @@ base_csv_index = base_csv_index.dropna(subset=['Texte'])
 base_csv_index = base_csv_index[~base_csv_index['Description'].str.contains('Audio', na=False)]
 
 # Sauvegarder la base finale
-base_csv_index.to_csv("Data/base_csv_final.csv", index=False)
+fs = s3fs.S3FileSystem(client_kwargs={"endpoint_url": "https://minio.lab.sspcloud.fr"})
+
+MY_BUCKET = "arnaudbrrt"
+fs.ls(MY_BUCKET) 
+
+FILE_PATH_OUT_S3 = f"{MY_BUCKET}/Data_libroguessr/base_csv_final.csv"
+
+with fs.open(FILE_PATH_OUT_S3, "w") as file_out:
+    base_csv_index.to_csv(file_out, index=False)
+
 print(base_csv_index.head())
 print(base_csv_index.shape[0])
