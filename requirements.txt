@@ -5,7 +5,11 @@ rapidfuzz==3.11.0
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.26.1
 langdetect==1.0.9
+<<<<<<< HEAD
 requests==2.32.3
+=======
+requests== 2.32.3
+>>>>>>> 062c868314bc88a0598ba4d5de8b57a53ae5c499
 numpy==2.2.1
 seaborn==0.13.2
 scikit-learn==1.6.0
