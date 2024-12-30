@@ -60,6 +60,8 @@ Pour réaliser un clustering sur les livres, nous avons choisi d'appliquer la m�
 
 
 # Résultats 
+![Graphique](./Data/résultat_cluster.png)
+
 
 L'algorithme VBGMM permet de définir 3 clusters relativement robustes uniquement fondés sur le textes tokenisés.
 
